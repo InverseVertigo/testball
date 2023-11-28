@@ -21,11 +21,12 @@ func _ready():
 
 
 func _on_BallSpawnTimer_timeout():
-	var ball_scene = preload("res://Ball.tscn") 
-	var ball_instance = ball_scene.instantiate()	
-	add_child(ball_instance)
-	ball_instance.position = Vector2(randf_range(0, (get_viewport_rect().size.x)-200), randf_range(0, (get_viewport_rect().size.y)-200))
-	GlobalSingleton.ball_count+=1
+	if (GlobalSingleton.ball_count<1000):
+		var ball_scene = preload("res://Ball.tscn") 
+		var ball_instance = ball_scene.instantiate()	
+		add_child(ball_instance)
+		ball_instance.position = Vector2(randf_range(0, (get_viewport_rect().size.x)-200), randf_range(0, (get_viewport_rect().size.y)/2)-50)
+		GlobalSingleton.ball_count+=1
 	
 	# Set initial velocity or other properties as needed
 	

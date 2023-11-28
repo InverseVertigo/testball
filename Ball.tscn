@@ -13,6 +13,9 @@ size = Vector2(31, 30)
 particle_flag_disable_z = true
 direction = Vector3(0, 0, 0)
 gravity = Vector3(0, 0, 0)
+sub_emitter_mode = 1
+sub_emitter_frequency = 4.0
+sub_emitter_keep_velocity = true
 
 [node name="ballscene" type="RigidBody2D"]
 position = Vector2(34, 37)
@@ -33,7 +36,7 @@ texture = ExtResource("2_5hy8y")
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(-17, -12)
 scale = Vector2(0.0876871, 0.0960665)
+emitting = false
 sub_emitter = NodePath(".")
 process_material = SubResource("ParticleProcessMaterial_kdnat")
 lifetime = 5.0
-trail_enabled = true
