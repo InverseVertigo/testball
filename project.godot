@@ -37,7 +37,7 @@ project/assembly_name="Testball"
 2d/default_angular_damp=2.39
 2d/sleep_threshold_angular=1.0
 2d/time_before_sleep=0.01
-2d/solver/contact_recycle_radius=6.19
+2d/solver/contact_recycle_radius=2.0
 
 [rendering]
 

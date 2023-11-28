@@ -6,14 +6,14 @@ func _ready():
 	var ballSpawnTimer = $BallSpawnTimer 
 	var ball_scene = preload("res://Ball.tscn")  # Replace with your ball scene path
 	randomize()  # Initialize the random number generator
-	GlobalSingleton.initial_ball_count=625
+	GlobalSingleton.initial_ball_count=925
 	GlobalSingleton.ball_count=GlobalSingleton.initial_ball_count
 	
 	ballSpawnTimer.connect("timeout", Callable(self, "_on_BallSpawnTimer_timeout"))
 	
 	for i in range(GlobalSingleton.initial_ball_count):
 		var ball_instance = ball_scene.instantiate()
-		ball_instance.position = Vector2(i*10,i*10)
+		ball_instance.position = Vector2(i*5,i*5)
 		add_child(ball_instance)
 		#ball_instance.position = Vector2(randf_range(0, get_viewport_rect().size.x), randf_range(0, get_viewport_rect().size.y))
 		
@@ -21,7 +21,7 @@ func _ready():
 
 
 func _on_BallSpawnTimer_timeout():
-	if (GlobalSingleton.ball_count<1000):
+	if (GlobalSingleton.ball_count<1300):
 		var ball_scene = preload("res://Ball.tscn") 
 		var ball_instance = ball_scene.instantiate()	
 		add_child(ball_instance)
