@@ -33,11 +33,10 @@ project/assembly_name="Testball"
 
 2d/run_on_separate_thread=true
 2d/physics_engine="GodotPhysics2D"
-2d/sleep_threshold_linear=0.1
-2d/sleep_threshold_angular=0.02
-2d/time_before_sleep=0.05
-2d/solver/solver_iterations=128
-2d/solver/contact_max_separation=10.0
+2d/sleep_threshold_linear=1.0
+2d/sleep_threshold_angular=0.1
+2d/time_before_sleep=0.01
+2d/solver/solver_iterations=32
 2d/solver/contact_max_allowed_penetration=0.01
 
 [rendering]

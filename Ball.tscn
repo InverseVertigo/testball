@@ -33,5 +33,7 @@ texture = ExtResource("2_5hy8y")
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(-17, -12)
 scale = Vector2(0.0876871, 0.0960665)
+sub_emitter = NodePath(".")
 process_material = SubResource("ParticleProcessMaterial_kdnat")
-lifetime = 7.06
+lifetime = 5.0
+trail_enabled = true

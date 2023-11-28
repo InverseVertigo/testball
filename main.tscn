@@ -54,7 +54,7 @@ offset_bottom = -215.0
 script = ExtResource("4_k6stl")
 
 [node name="BallSpawnTimer" type="Timer" parent="."]
-wait_time = 0.062
+wait_time = 0.184
 autostart = true
 
 [node name="Platform" type="StaticBody2D" parent="."]
