@@ -32,12 +32,13 @@ project/assembly_name="Testball"
 [physics]
 
 2d/run_on_separate_thread=true
+common/physics_ticks_per_second=70
 2d/physics_engine="GodotPhysics2D"
 2d/default_linear_damp=1.027
 2d/default_angular_damp=2.39
-2d/sleep_threshold_angular=1.0
-2d/time_before_sleep=0.01
-2d/solver/contact_recycle_radius=2.0
+2d/solver/solver_iterations=64
+2d/solver/contact_recycle_radius=1.48
+2d/solver/contact_max_separation=3.0
 
 [rendering]
 

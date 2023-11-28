@@ -16,7 +16,7 @@ func _on_Area2D_body_exited(body):
 func _physics_process(_delta):
 	for body in bodies_in_area.keys():
 		if body and body is RigidBody2D:
-			body.linear_velocity.y -= 50
+			body.linear_velocity.y -= 150
 
 
 

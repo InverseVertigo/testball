@@ -7,7 +7,7 @@
 absorbent = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yabk5"]
-size = Vector2(31, 30)
+size = Vector2(26, 27)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kdnat"]
 particle_flag_disable_z = true
@@ -25,7 +25,7 @@ linear_damp = 1.02
 script = ExtResource("1_blhjr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-17, -12)
+position = Vector2(-17, -12.5)
 shape = SubResource("RectangleShape2D_yabk5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
