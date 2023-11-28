@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://ewy0jqvtogsx"]
+
+[ext_resource type="Script" path="res://Ball.gd" id="1_blhjr"]
+[ext_resource type="Texture2D" uid="uid://dy72ocx4hlp8l" path="res://Screenshot 2023-11-18 203520.png" id="2_5hy8y"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1861l"]
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yabk5"]
+size = Vector2(31, 30)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kdnat"]
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 0, 0)
+
+[node name="ballscene" type="RigidBody2D"]
+position = Vector2(34, 37)
+physics_material_override = SubResource("PhysicsMaterial_1861l")
+linear_damp_mode = 1
+linear_damp = 1.02
+script = ExtResource("1_blhjr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-17, -12)
+shape = SubResource("RectangleShape2D_yabk5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-17, -12)
+scale = Vector2(0.0876871, 0.0960665)
+texture = ExtResource("2_5hy8y")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-17, -12)
+scale = Vector2(0.0876871, 0.0960665)
+process_material = SubResource("ParticleProcessMaterial_kdnat")
+lifetime = 7.06

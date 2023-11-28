@@ -1,0 +1,125 @@
+[gd_scene load_steps=14 format=3 uid="uid://buvajeyxoij58"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_msfrm"]
+[ext_resource type="Script" path="res://fps.gd" id="2_7p0g1"]
+[ext_resource type="Texture2D" uid="uid://lba211dbpdrs" path="res://A_title_screen_to_a_cyberpunk_movie_that_says_IN.jpg" id="3_4b20s"]
+[ext_resource type="Script" path="res://count.gd" id="4_k6stl"]
+[ext_resource type="Texture2D" uid="uid://5cambljeht3w" path="res://platformsbeach.png" id="5_epdua"]
+[ext_resource type="Script" path="res://velocitybooster.gd" id="6_j4cei"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1vk3"]
+size = Vector2(398.5, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjcw5"]
+size = Vector2(40.3763, 1132.67)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0qxr"]
+size = Vector2(1956.5, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cyrwc"]
+size = Vector2(26.5, 1183)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hur8f"]
+size = Vector2(1931.5, 33.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p42ic"]
+size = Vector2(300, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5j3ys"]
+size = Vector2(267, 635)
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_msfrm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
+position = Vector2(955, 547)
+scale = Vector2(1.85938, 1.6875)
+texture = ExtResource("3_4b20s")
+
+[node name="fps" type="Label" parent="Camera2D/Sprite2D"]
+offset_left = -450.085
+offset_top = -274.28
+offset_right = -211.085
+offset_bottom = -207.28
+script = ExtResource("2_7p0g1")
+
+[node name="count" type="Label" parent="Camera2D/Sprite2D"]
+offset_left = -450.0
+offset_top = -289.0
+offset_right = -198.0
+offset_bottom = -215.0
+script = ExtResource("4_k6stl")
+
+[node name="BallSpawnTimer" type="Timer" parent="."]
+wait_time = 0.062
+autostart = true
+
+[node name="Platform" type="StaticBody2D" parent="."]
+position = Vector2(627.555, 571.045)
+rotation = 0.888373
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform"]
+position = Vector2(3.99997, -40)
+scale = Vector2(2.97059, 1.75)
+texture = ExtResource("5_epdua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+position = Vector2(-6.10352e-05, -54.5)
+shape = SubResource("RectangleShape2D_f1vk3")
+
+[node name="Platform2" type="StaticBody2D" parent="."]
+position = Vector2(1193, 579)
+rotation = -0.760964
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform2"]
+position = Vector2(3.99997, -40)
+scale = Vector2(2.97059, 1.75)
+texture = ExtResource("5_epdua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
+position = Vector2(0, -54.5)
+shape = SubResource("RectangleShape2D_f1vk3")
+
+[node name="bottom-catch" type="StaticBody2D" parent="."]
+position = Vector2(195, 1111)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bottom-catch"]
+position = Vector2(-187, -550)
+shape = SubResource("RectangleShape2D_sjcw5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bottom-catch"]
+position = Vector2(778, -36)
+shape = SubResource("RectangleShape2D_d0qxr")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="bottom-catch"]
+position = Vector2(1726.75, -596.5)
+shape = SubResource("RectangleShape2D_cyrwc")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="bottom-catch"]
+position = Vector2(767.75, -1119.25)
+shape = SubResource("RectangleShape2D_hur8f")
+
+[node name="oneway" type="StaticBody2D" parent="."]
+position = Vector2(1552, 578)
+
+[node name="Sprite2D" type="Sprite2D" parent="oneway"]
+position = Vector2(175, -9.5)
+scale = Vector2(2.16176, 0.604167)
+texture = ExtResource("5_epdua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="oneway"]
+position = Vector2(180, -12.5)
+shape = SubResource("RectangleShape2D_p42ic")
+one_way_collision = true
+one_way_collision_margin = 6.8
+
+[node name="velocitybooster" type="Area2D" parent="."]
+position = Vector2(845.435, 680)
+script = ExtResource("6_j4cei")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="velocitybooster"]
+position = Vector2(77.065, -31.5)
+shape = SubResource("RectangleShape2D_5j3ys")
