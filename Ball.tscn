@@ -1,13 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ewy0jqvtogsx"]
+[gd_scene load_steps=7 format=3 uid="uid://ewy0jqvtogsx"]
 
 [ext_resource type="Script" path="res://Ball.gd" id="1_blhjr"]
 [ext_resource type="Texture2D" uid="uid://dy72ocx4hlp8l" path="res://Screenshot 2023-11-18 203520.png" id="2_5hy8y"]
+[ext_resource type="Script" path="res://GlenSprite.gd" id="3_2ium3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1861l"]
 absorbent = true
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yabk5"]
-size = Vector2(26, 27)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kdnat"]
 particle_flag_disable_z = true
@@ -17,6 +15,9 @@ sub_emitter_mode = 1
 sub_emitter_frequency = 4.0
 sub_emitter_keep_velocity = true
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yabk5"]
+size = Vector2(300, 300)
+
 [node name="ballscene" type="RigidBody2D"]
 position = Vector2(34, 37)
 physics_material_override = SubResource("PhysicsMaterial_1861l")
@@ -24,14 +25,12 @@ linear_damp_mode = 1
 linear_damp = 1.02
 script = ExtResource("1_blhjr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-17, -12.5)
-shape = SubResource("RectangleShape2D_yabk5")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="GlenSprite" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0, 1, 1)
 position = Vector2(-17, -12)
-scale = Vector2(0.0876871, 0.0960665)
+scale = Vector2(0.074, 0.08)
 texture = ExtResource("2_5hy8y")
+script = ExtResource("3_2ium3")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(-17, -12)
@@ -40,3 +39,8 @@ emitting = false
 sub_emitter = NodePath(".")
 process_material = SubResource("ParticleProcessMaterial_kdnat")
 lifetime = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-17, -12)
+scale = Vector2(0.08, 0.08)
+shape = SubResource("RectangleShape2D_yabk5")

@@ -13,8 +13,9 @@ func _physics_process(_delta):
 	
 	# Bounce off the left and right sides
 	#if (position.x  < 0 and linear_velocity.x < 0) or (position.x  > screen_size.x and linear_velocity.x > 0):
-	if (position.x  < 0) or (position.x  > screen_size.x):
-		linear_velocity.x = -(linear_velocity.x+20)
+	
+	#if (position.x  < 0) or (position.x  > screen_size.x):
+	#	linear_velocity.x = -(linear_velocity.x+20)
 
 	# Bounce off the top and bottom
 	#if (position.y - radius() < 0 and linear_velocity.y < 0) or (position.y + radius() > screen_size.y and linear_velocity.y > 0):

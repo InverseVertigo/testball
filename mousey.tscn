@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0o6jr1suuiqt"]
+
+[ext_resource type="Script" path="res://mousey.gd" id="1_uotv6"]
+[ext_resource type="Texture2D" uid="uid://dy72ocx4hlp8l" path="res://Screenshot 2023-11-18 203520.png" id="2_4xia5"]
+[ext_resource type="Script" path="res://mouseyArea2D.gd" id="3_l3ylx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_o544m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2raam"]
+size = Vector2(124, 122)
+
+[node name="mousey" type="RigidBody2D"]
+mass = 20.0
+physics_material_override = SubResource("PhysicsMaterial_o544m")
+script = ExtResource("1_uotv6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0, 0, 1)
+scale = Vector2(0.398718, 0.415753)
+texture = ExtResource("2_4xia5")
+
+[node name="mouseyArea2D" type="Area2D" parent="."]
+script = ExtResource("3_l3ylx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mouseyArea2D"]
+shape = SubResource("RectangleShape2D_2raam")

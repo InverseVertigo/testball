@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://count.gd" id="4_k6stl"]
 [ext_resource type="Texture2D" uid="uid://5cambljeht3w" path="res://platformsbeach.png" id="5_epdua"]
 [ext_resource type="Script" path="res://velocitybooster.gd" id="6_j4cei"]
+[ext_resource type="PackedScene" uid="uid://b0o6jr1suuiqt" path="res://mousey.tscn" id="7_jpyvh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1vk3"]
 size = Vector2(398.5, 65)
@@ -23,10 +24,7 @@ size = Vector2(26.5, 1183)
 size = Vector2(1931.5, 33.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p42ic"]
-size = Vector2(300, 27)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5j3ys"]
-size = Vector2(164, 794)
+size = Vector2(604, 27)
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_msfrm")
@@ -87,7 +85,7 @@ shape = SubResource("RectangleShape2D_f1vk3")
 position = Vector2(195, 1111)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bottom-catch"]
-position = Vector2(-187, -550)
+position = Vector2(-221, -552)
 shape = SubResource("RectangleShape2D_sjcw5")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="bottom-catch"]
@@ -103,15 +101,15 @@ position = Vector2(767.75, -1119.25)
 shape = SubResource("RectangleShape2D_hur8f")
 
 [node name="oneway" type="StaticBody2D" parent="."]
-position = Vector2(1552, 578)
+position = Vector2(749, 832)
 
 [node name="Sprite2D" type="Sprite2D" parent="oneway"]
-position = Vector2(175, -9.5)
-scale = Vector2(2.16176, 0.604167)
+position = Vector2(168, -9.5)
+scale = Vector2(4.27941, 0.604167)
 texture = ExtResource("5_epdua")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="oneway"]
-position = Vector2(180, -12.5)
+position = Vector2(168, -12.5)
 shape = SubResource("RectangleShape2D_p42ic")
 one_way_collision = true
 one_way_collision_margin = 6.8
@@ -120,6 +118,10 @@ one_way_collision_margin = 6.8
 position = Vector2(845.435, 680)
 script = ExtResource("6_j4cei")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="velocitybooster"]
-position = Vector2(67.565, -31)
-shape = SubResource("RectangleShape2D_5j3ys")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="velocitybooster"]
+polygon = PackedVector2Array(-463.435, 375, -824.435, 379, -345.435, 309, -39.435, 144, -188.435, 104, -22.435, -19, -267.435, -323, -99.435, -165, 66.565, -26, 270.565, -184, 433.565, -307, 143.565, -33, 323.565, 116, 168.565, 134, 464.565, 295, 1041.56, 376, 575.565, 382)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
+
+[node name="mousey" parent="." instance=ExtResource("7_jpyvh")]

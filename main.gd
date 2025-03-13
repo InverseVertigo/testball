@@ -13,8 +13,8 @@ func _ready():
 	
 	for i in range(GlobalSingleton.initial_ball_count):
 		var ball_instance = ball_scene.instantiate()
-		ball_instance.position = Vector2(randf_range(0, (get_viewport_rect().size.x)-200), randf_range(0, (get_viewport_rect().size.y)/2)-50)
-		#ball_instance.position = Vector2(i*4,i*4)
+		#ball_instance.position = Vector2(randf_range(0, (get_viewport_rect().size.x)), randf_range(0, (get_viewport_rect().size.y)/2)-50)
+		ball_instance.position = Vector2(randf_range(0, (get_viewport_rect().size.x)), randf_range(0, (get_viewport_rect().size.y)/2)-50)
 		add_child(ball_instance)
 		#ball_instance.position = Vector2(randf_range(0, get_viewport_rect().size.x), randf_range(0, get_viewport_rect().size.y))
 		
